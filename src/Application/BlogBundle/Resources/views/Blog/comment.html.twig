@@ -1,0 +1,29 @@
+{% extends "ApplicationBlogBundle::layout.html.twig" %}
+
+    {% block title %}
+	    symfony2 Blog | Accueil
+	{% endblock %}
+	 
+	{% block content %}
+	 
+	    {% for comm in comms %}
+	<div class="comm">
+	
+	<p class="comm-info">Posté par {{ comm.user.username }}
+	</p><p class="post_body">
+	                {{ comm.content }}
+	             
+	</p>
+	 
+	                   
+	                
+	          
+	<p class="postmeta">
+	              
+	<span class="date">{{ comm.createdAt | date('l d M Y') }}</span>
+	             
+	</p></div>
+	 
+	    {% endfor %}
+		<a href="../blog">Retour</a>
+{% endblock %}

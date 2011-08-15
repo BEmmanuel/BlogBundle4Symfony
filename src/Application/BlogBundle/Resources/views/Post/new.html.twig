@@ -1,0 +1,15 @@
+{% extends "ApplicationBlogBundle::layout.html.twig" %}
+{% block content %}
+<h1>Post creation</h1>
+
+<form action="{{ path('post_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<a href="{{ path('post') }}">
+           &nbsp;&nbsp; Retour &agrave; la liste
+        </a>
+{% endblock %}

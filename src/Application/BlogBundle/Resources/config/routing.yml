@@ -1,0 +1,74 @@
+ApplicationBlogBundle_homepage:
+    pattern:  /blog
+    defaults: { _controller: ApplicationBlogBundle:Blog:index }
+
+ApplicationBlogBundle_comment:
+    pattern:  /comment/{id}
+    defaults: { _controller: ApplicationBlogBundle:Blog:comment }
+
+ApplicationBlogBundle_new:
+    pattern:  /new
+    defaults: { _controller: ApplicationBlogBundle:Post:new}
+
+ApplicationBlogBundle_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: ApplicationBlogBundle:Post:edit}
+
+default_index:
+  pattern:   /:module
+  defaults: { action: index }
+
+default:
+  pattern:   /:module/:action/*
+ 
+post_show:
+  pattern:   /{id}/show
+  defaults:  { _controller: ApplicationBlogBundle:Post:show}
+
+post_create:
+  pattern:  /create
+  defaults: { _controller: ApplicationBlogBundle:Post:create}
+  
+post_update:
+  pattern: /{id}/update
+  defaults:  { _controller: ApplicationBlogBundle:Post:update}
+
+post:
+  pattern:  /blog
+  defaults: { _controller: ApplicationBlogBundle:Blog:index }
+  
+post_delete:
+  pattern:  /{id}/delete
+  defaults: { _controller: ApplicationBlogBundle:Post:delete}
+
+post_edit:
+  pattern:  /{id}/edit
+  defaults: { _controller: ApplicationBlogBundle:Post:edit}
+  
+post_sort:
+  pattern:  /{id}/sort
+  defaults:  { _controller: ApplicationBlogBundle:Blog:sort}
+ 
+comment_show:
+  pattern:   /comment/{id}/show
+  defaults:  { _controller: ApplicationBlogBundle:Comment:show}
+
+comment_create:
+  pattern:  /comment/create
+  defaults: { _controller: ApplicationBlogBundle:Comment:create}
+  
+comment_update:
+  pattern: /comment/{id}/update
+  defaults:  { _controller: ApplicationBlogBundle:Comment:update}
+
+comment_new:
+    pattern:  comment/new
+    defaults: { _controller: ApplicationBlogBundle:Comment:new}
+  
+comment_delete:
+  pattern:  /comment/{id}/delete
+  defaults: { _controller: ApplicationBlogBundle:Comment:delete}
+
+comment_edit:
+  pattern:  /comment/{id}/edit
+  defaults: { _controller: ApplicationBlogBundle:Comment:edit}

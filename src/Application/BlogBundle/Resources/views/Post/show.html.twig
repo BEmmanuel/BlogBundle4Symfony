@@ -1,0 +1,30 @@
+{% extends "ApplicationBlogBundle::layout.html.twig" %}
+{% block content %}
+<h1>Post</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Titre</th>                <td>{{ entity.title }}</td>        </tr>
+        <tr>
+            <th>Contenu</th>                <td>{{ entity.content }}</td>        </tr>
+        <tr>
+            <th>Cr&eacute;&eacute; le</th>                <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>        </tr>
+        <tr>
+            <th>Mis &agrave; jour le</th>                <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>        </tr>
+    </tbody>
+</table>
+    
+        <form action="{{ path('post_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Supprimer</button>
+        </form>
+		<a href="{{ path('post_edit', { 'id': entity.id }) }}">
+            Editer
+        </a><br />
+		<a href="{{ path('post') }}">
+            Retour &agrave; la liste
+        </a>
+    
+        
+{% endblock %}
